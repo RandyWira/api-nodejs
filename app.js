@@ -7,8 +7,9 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 
-const appRoute = require('./src/routes/route-menu');
-app.use('/', appRoute);
+const appMenu = require('./src/routes/route-menu');
+const appPromo = require('./src/routes/route-promo');
+app.use('/', [appMenu,appPromo]);
 
 app.listen(8080, () =>{
     console.log('server berjalan pada Port :8080');
